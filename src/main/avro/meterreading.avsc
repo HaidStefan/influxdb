@@ -1,0 +1,116 @@
+{
+  "doc": "This Schema describes how to represent a measurement record of a specific operational property of a MeterIndividual",
+  "fields": [
+    {
+      "doc": "Identifier of the meter reading",
+      "name": "meterReadingIdentifier",
+      "type": {
+        "doc": "This Schema describes how to represent the identification of an object. An identifier, of a particular type, uniquely identifies the object within a given identifier context.",
+        "fields": [
+          {
+            "doc": "The identifier being assigned.",
+            "name": "id",
+            "type": "string"
+          }
+        ],
+        "name": "Identification",
+        "type": "record"
+      }
+    },
+    {
+      "doc": "The meter that is read.",
+      "name": "forMeter",
+      "type": {
+        "doc": "This Schema describes how to represent a meter, that measures specific operational properties.",
+        "fields": [
+          {
+            "doc": "Identifier of the meter",
+            "name": "serialNumber",
+            "type": "Identification"
+          },
+          {
+            "doc": "The name of the meter of supply.",
+            "name": "meterIndividualName",
+            "type": {
+              "doc": "A Descriptor is a set of words that describe something.",
+              "fields": [
+                {
+                  "doc": "The LocalizedString representing providing the textual content of the description.",
+                  "name": "text",
+                  "type": "string"
+                }
+              ],
+              "name": "Descriptor",
+              "type": "record"
+            }
+          },
+          {
+            "doc": "Relationship to a physical meter element that the meter individual is realized.",
+            "name": "ofType",
+            "type": {
+              "doc": "This Schema describes how to represent a physical structure element that represents a meter, that measures specific operational properties. .",
+              "fields": [
+                {
+                  "doc": "Identifier of the physical meter element",
+                  "name": "physicalMeterElementId",
+                  "type": "Identification"
+                },
+                {
+                  "doc": "The name of the physical meter element of supply.",
+                  "name": "physicalMeterElementName",
+                  "type": "Descriptor"
+                }
+              ],
+              "name": "PhysicalMeterElement",
+              "type": "record"
+            }
+          }
+        ],
+        "name": "MeterIndividual",
+        "type": "record"
+      }
+    },
+    {
+      "doc": "Time of reading of the meter individual.",
+      "name": "readingTime",
+      "namespace": "infrastructure.avro.model.MeterReading",
+      "type": "string"
+    },
+    {
+      "doc": "Specific value that the meter is displayed.",
+      "name": "meterReadingValue",
+      "namespace": "infrastructure.avro.model.MeterReading",
+      "type": {
+        "doc": "This Schema  describes how to represent a value of an operational property definition that is registered at a certain time for a specific item of supply individual, or that is defined as an allowed value for the property.",
+        "fields": [
+          {
+            "doc": "Value of the property (if numerical, use textValue otherwise).",
+            "name": "numericValue",
+            "type": "double"
+          },
+          {
+            "doc": "An external unit representing the measurement unit for the property value.",
+            "name": "unit",
+            "type": {
+              "doc": "This Schema describes how to represent a unit of measurement",
+              "fields": [
+                {
+                  "doc": "A symbol that identifies the unit of measurement.",
+                  "name": "symbol",
+                  "type": "string"
+                }
+              ],
+              "name": "Unit",
+              "type": "record"
+            }
+          }
+        ],
+        "name": "PropertyValue",
+        "type": "record"
+      }
+    }
+  ],
+  "name": "MeterReading",
+  "namespace": "infrastructure.avro.model.MeterReading",
+  "type": "record"
+}

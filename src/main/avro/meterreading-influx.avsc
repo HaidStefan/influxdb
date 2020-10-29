@@ -1,0 +1,36 @@
+{
+  "name": "MeterReadingInflux",
+  "type": "record",
+  "namespace": "at.fhv.bigdata.influx",
+  "fields": [
+    {
+      "name": "measurement",
+      "type": "string"
+    },
+      {
+        "name": "meterReadingIdentifier",
+        "type": "string"
+      },
+      {
+        "name": "meterSerialNumber",
+        "type": "string"
+      },
+      {
+        "name": "meterIndividualName",
+        "type": "string"
+      },
+      {
+        "name": "physicalMeterElementId",
+        "type": "string"
+      },
+      {
+        "name": "physicalMeterElementName",
+        "type": "string"
+      },
+
+    {
+      "name": "numericValue",
+      "type": "double"
+    }
+  ]
+}
