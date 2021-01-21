@@ -6,7 +6,7 @@ If you want to learn more about Quarkus, please visit its website: https://quark
 
 ## Running the application in dev mode
 
-You can run your application in dev mode that enables live coding using:
+Run the application in dev mode that enables live coding using:
 ```shell script
 ./mvnw compile quarkus:dev
 ```
@@ -46,28 +46,7 @@ If you want to learn more about building native executables, please consult http
 # Command Mode
 
 Guide: https://quarkus.io/guides/command-mode-reference
-
-
-### MeterReading-Influx Avro:
-
-    {
-        "measurement": "temperature-humidity",
-        "tags": {
-            "meterReadingIdentifier": "3dbec499-80b8-4b31-9012-9f6c479c3228",
-            "meterSerialNumber":"eba5b585-8bd3-498a-a3bc-6f8cd4b9f975",
-            "meterIndividualName": "/C:/workdir/bigdata/sensor-layer/target/classes/example%5csmall%5cTA_Bad_1.txt",
-            "physicalMeterElementId": "d2458a5e-c37d-42d7-8e1a-74f8eff89660",
-            "physicalMeterElementName": "Merten"
-        },
-        "numericValue": 30.1
-    }
-
-Converted Here: https://toolslick.com/generation/metadata/avro-schema-from-json
-
-
-### Avro Class Codegen
-    mvn generate-sources
-
+    
 ### Avro Tutorials Used:
 https://quarkus.io/blog/kafka-avro/
 https://quarkus.io/guides/kafka
@@ -79,3 +58,6 @@ https://quarkus.io/guides/kafka
 
 #### delete all measurements
     DROP SERIES FROM /.*/
+    
+### Start the application
+    mvn compile quarkus:dev

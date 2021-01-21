@@ -7,6 +7,10 @@
       "name": "measurement",
       "type": "string"
     },
+        {
+          "name": "time",
+          "type": "string"
+        },
       {
         "name": "meterReadingIdentifier",
         "type": "string"
